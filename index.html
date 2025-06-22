@@ -12,15 +12,16 @@
 
         body {
             font-family: Arial, sans-serif;
-            color: white;
+            color: black;
             margin: 0;
             padding: 0;
             height: 100vh;
             display: flex;
-            justify-content: center;   /* Centrado horizontal */
-            align-items: center;       /* Centrado vertical */
+            justify-content: center;
+            align-items: center;
             text-align: center;
             overflow-x: hidden;
+            background-color: white;
         }
 
         body::before {
@@ -47,6 +48,7 @@
             font-family: 'Abril Fatface', cursive;
             font-size: 2.5em;
             margin-bottom: 20px;
+            color: white; /* Solo este texto en blanco */
         }
 
         p, h2 {
@@ -55,9 +57,16 @@
         }
 
         a {
-            color: #FFD700;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        a.facebook {
+            color: #1877F2; /* Azul de Facebook */
+        }
+
+        a.instagram {
+            color: #E1306C; /* Rosa de Instagram */
         }
 
         a:hover {
@@ -88,8 +97,8 @@
 
         <p>Sigue nuestra historia en:</p>
         <p>
-            <a href="https://www.facebook.com/RestaurandolasArtesTp" target="_blank">Facebook</a> |
-            <a href="https://www.instagram.com/restaurandotp/" target="_blank">Instagram</a>
+            <a class="facebook" href="https://www.facebook.com/RestaurandolasArtesTp" target="_blank">Facebook</a> |
+            <a class="instagram" href="https://www.instagram.com/restaurandotp/" target="_blank">Instagram</a>
         </p>
     </div>
 </body>
