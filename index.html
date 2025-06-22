@@ -2,16 +2,24 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Misiones Kenia</title>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            color: white; /* Cambiado a blanco */
-            position: relative;
+            color: white;
             margin: 0;
-            min-height: 100vh;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;   /* Centrado horizontal */
+            align-items: center;       /* Centrado vertical */
+            text-align: center;
             overflow-x: hidden;
         }
 
@@ -30,39 +38,60 @@
             z-index: -1;
         }
 
+        .container {
+            max-width: 90%;
+            padding: 20px;
+        }
+
         .abril {
             font-family: 'Abril Fatface', cursive;
             font-size: 2.5em;
-            margin-top: 30px;
+            margin-bottom: 20px;
         }
 
-        /* Si quieres que los enlaces sean visibles también */
-        a {
-            color: #FFD700; /* Un amarillo dorado, por ejemplo */
-            text-decoration: none;
+        p, h2 {
+            font-size: 1.2em;
+            margin: 10px 0;
         }
+
+        a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .abril {
+                font-size: 2em;
+            }
+
+            p, h2 {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="abril">Misiones somos todos 🌎</div>
 
-    <div class="abril">Misiones somos todos 🌎</div>
+        <p>Ayúdanos a llegar a Kenia 🇰🇪</p>
 
-    <p>Ayúdanos a llegar a Kenia 🇰🇪</p>
+        <h2>💳 Datos para donar</h2>
+        <p><strong>Banco:</strong> Banco Azteca</p>
+        <p><strong>CLABE:</strong> 127180013399605676</p>
+        <p><strong>Beneficiario:</strong> Tatiana Sales Reche Joaquim</p>
 
-    <h2>💳 Datos para donar</h2>
-    <p><strong>Banco:</strong> Banco Azteca</p>
-    <p><strong>CLABE:</strong> 127180013399605676</p>
-    <p><strong>Beneficiario:</strong> Tatiana Sales Reche Joaquim</p>
-
-    <p>Sigue nuestra historia en:</p>
-    <p>
-        <a href="https://www.facebook.com/RestaurandolasArtesTp" target="_blank">Facebook</a> |
-        <a href="https://www.instagram.com/restaurandotp/" target="_blank">Instagram</a>
-    </p>
-
+        <p>Sigue nuestra historia en:</p>
+        <p>
+            <a href="https://www.facebook.com/RestaurandolasArtesTp" target="_blank">Facebook</a> |
+            <a href="https://www.instagram.com/restaurandotp/" target="_blank">Instagram</a>
+        </p>
+    </div>
 </body>
 </html>
 
