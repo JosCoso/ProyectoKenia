@@ -1,0 +1,193 @@
+/* estilos.css */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: black;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.imgur.com/pazxDt0.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    z-index: -1;
+  }
+  
+  main.container {
+    max-width: 90%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white;
+    background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: revealText 2s ease forwards;
+    display: inline;
+  }
+  
+  .emoji {
+    color: white;
+    -webkit-text-fill-color: initial;
+    background: none !important;
+    animation: moveWorld 2s ease forwards;
+    display: inline-block;
+    margin-left: 0.1em;
+    position: relative;
+    left: -100%;
+  }
+  
+  @keyframes revealText {
+    to {
+      background-position: 0 0;
+    }
+  }
+  
+  @keyframes moveWorld {
+    to {
+      left: 0;
+    }
+  }
+  
+  section p,
+  section h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .destacado p,
+  .destacado h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #222222;
+    margin: 15px 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  nav ul li a {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav ul li a.facebook {
+    background-color: #1877F2;
+  }
+  
+  nav ul li a.facebook:hover,
+  nav ul li a.facebook:focus {
+    background-color: #145dbf;
+    text-decoration: underline;
+    outline: none;
+  }
+  
+  nav ul li a.instagram {
+    background-color: #E1306C;
+  }
+  
+  nav ul li a.instagram:hover,
+  nav ul li a.instagram:focus {
+    background-color: #b21e57;
+    text-decoration: underline;
+    outline: none;
+  }
+  
+  .btn-proyecto {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    margin-top: 10px;
+  }
+  
+  .btn-proyecto:hover,
+  .btn-proyecto:focus {
+    background-color: #388e3c;
+    text-decoration: underline;
+    outline: none;
+  }
+  
+  section.misiones-anteriores {
+    margin-top: 40px;
+  }
+  
+  @media (hover: none) and (pointer: coarse) {
+    nav ul li a.facebook,
+    nav ul li a.instagram {
+      padding: 14px 20px;
+      font-size: 1.1em;
+      border-radius: 8px;
+    }
+  
+    nav ul li a.facebook:active {
+      background-color: #145dbf;
+    }
+  
+    nav ul li a.instagram:active {
+      background-color: #b21e57;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2em;
+    }
+  
+    section p,
+    section h2 {
+      font-size: 1em;
+    }
+  
+    .destacado p,
+    .destacado h2 {
+      font-size: 1.2em;
+    }
+  }
+  
