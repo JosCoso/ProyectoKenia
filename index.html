@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Misiones Kenia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet" />
     <style>
         * {
             box-sizing: border-box;
@@ -15,7 +16,7 @@
             color: black;
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -39,68 +40,218 @@
             z-index: -1;
         }
 
-        .container {
+        main.container {
             max-width: 90%;
             padding: 20px;
         }
 
-        .abril {
+        header h1 {
             font-family: 'Abril Fatface', cursive;
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: white; /* Solo este texto en blanco */
+            color: white;
+            background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 50%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: revealText 2s ease forwards;
+            display: inline;
         }
 
-        p, h2 {
+        .emoji {
+            color: white;
+            -webkit-text-fill-color: initial;
+            background: none !important;
+            animation: moveWorld 2s ease forwards;
+            display: inline-block;
+            margin-left: 0.1em;
+            position: relative;
+            left: -100%;
+        }
+
+        @keyframes revealText {
+            to {
+                background-position: 0 0;
+            }
+        }
+
+        @keyframes moveWorld {
+            to {
+                left: 0;
+            }
+        }
+
+        /* Estilos generales */
+        section p,
+        section h2 {
             font-size: 1.2em;
             margin: 10px 0;
         }
 
-        a {
-            text-decoration: none;
+        /* Destacado: tamaño y peso para Ayúdanos a llegar a Kenia hasta Beneficiario */
+        .destacado p,
+        .destacado h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #222222;
+            margin: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
             font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            user-select: none;
+            text-decoration: none;
+            color: white;
         }
 
-        a.facebook {
-            color: #1877F2; /* Azul de Facebook */
+        nav ul li a.facebook {
+            background-color: #1877F2;
         }
 
-        a.instagram {
-            color: #E1306C; /* Rosa de Instagram */
-        }
-
-        a:hover {
+        nav ul li a.facebook:hover,
+        nav ul li a.facebook:focus {
+            background-color: #145dbf;
             text-decoration: underline;
+            outline: none;
+        }
+
+        nav ul li a.instagram {
+            background-color: #E1306C;
+        }
+
+        nav ul li a.instagram:hover,
+        nav ul li a.instagram:focus {
+            background-color: #b21e57;
+            text-decoration: underline;
+            outline: none;
+        }
+
+        /* Botón proyecto */
+        .btn-proyecto {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            user-select: none;
+            margin-top: 10px;
+        }
+
+        .btn-proyecto:hover,
+        .btn-proyecto:focus {
+            background-color: #388e3c;
+            text-decoration: underline;
+            outline: none;
+        }
+
+        /* Separación extra para misiones anteriores */
+        section.misiones-anteriores {
+            margin-top: 40px;
+        }
+
+        /* Adaptaciones para dispositivos táctiles */
+        @media (hover: none) and (pointer: coarse) {
+
+            nav ul li a.facebook,
+            nav ul li a.instagram {
+                padding: 14px 20px;
+                font-size: 1.1em;
+                border-radius: 8px;
+            }
+
+            nav ul li a.facebook:active {
+                background-color: #145dbf;
+            }
+
+            nav ul li a.instagram:active {
+                background-color: #b21e57;
+            }
         }
 
         @media (max-width: 600px) {
-            .abril {
+            header h1 {
                 font-size: 2em;
             }
 
-            p, h2 {
+            section p,
+            section h2 {
                 font-size: 1em;
+            }
+
+            /* Ajustamos tamaño destacado para móvil */
+            .destacado p,
+            .destacado h2 {
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="abril">Misiones somos todos 🌎</div>
+    <main class="container">
+        <header>
+            <h1>
+                Misiones somos todos<span class="emoji">🌎</span>
+            </h1>
+        </header>
 
-        <p>Ayúdanos a llegar a Kenia 🇰🇪</p>
+        <section class="destacado">
+            <p>Ayúdanos a llegar a Kenia 🇰🇪</p>
+        </section>
 
-        <h2>💳 Datos para donar</h2>
-        <p><strong>Banco:</strong> Banco Azteca</p>
-        <p><strong>CLABE:</strong> 127180013399605676</p>
-        <p><strong>Beneficiario:</strong> Tatiana Sales Reche Joaquim</p>
+        <section class="destacado">
+            <h2>💳 Datos para donar</h2>
+            <p><strong>Banco:</strong> Banco Azteca</p>
+            <p><strong>CLABE:</strong> 127180013399605676</p>
+            <p><strong>Beneficiario:</strong> Tatiana Sales Reche Joaquim</p>
+        </section>
 
-        <p>Sigue nuestra historia en:</p>
-        <p>
-            <a class="facebook" href="https://www.facebook.com/RestaurandolasArtesTp" target="_blank">Facebook</a> |
-            <a class="instagram" href="https://www.instagram.com/restaurandotp/" target="_blank">Instagram</a>
-        </p>
-    </div>
+        <section class="misiones-anteriores">
+            <h2>Misiones anteriores</h2>
+            <div style="margin-bottom: 40px;">
+                <a class="btn-proyecto" href="galeria.html">
+                    🇪🇸 Proyecto Europa 2023 🇵🇹
+                </a>
+            </div>
+        </section>
+
+        <section class="sigue-nuestra-historia">
+            <h2>Sigue nuestra historia en:</h2>
+            <nav aria-label="Enlaces a redes sociales">
+                <ul>
+                    <li>
+                        <a class="facebook" href="https://www.facebook.com/RestaurandolasArtesTp" target="_blank"
+                            rel="noopener noreferrer">Facebook</a>
+                    </li>
+                    <li>
+                        <a class="instagram" href="https://www.instagram.com/restaurandotp/" target="_blank"
+                            rel="noopener noreferrer">Instagram</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
+    </main>
 </body>
-</html>
 
+</html>
